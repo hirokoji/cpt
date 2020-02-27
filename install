@@ -1,0 +1,17 @@
+#!/bin/bash
+
+ensure_in_bash_profile() {
+    LINE=$1
+    FILE=$2
+
+    touch "${FILE}"
+    grep -q "${LINE}" "${FILE}" || echo "${LINE}" >> "${FILE}"
+}
+
+SETUP_DIRECTORY="$( cd "$( dirname "${BASH_SOURCE[0]}" )" && pwd )"
+
+echo "Linking project bash_profile into ~/.bash_profile."
+ensure_in_bash_profile "source $SETUP_DIRECTORY/bash_profile" ~/.bash_profile
+
+echo "Linking project bash_profile into .~/.zshrc."
+ensure_in_bash_profile "source $SETUP_DIRECTORY/bash_profile" ~/.zshrc

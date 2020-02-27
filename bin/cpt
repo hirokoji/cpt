@@ -1,0 +1,59 @@
+#!/bin/bash
+
+function help () {
+
+    echo "cpt copy fiels from template to target directory "
+    echo "usage: cpt [template-name] [target directory path]"
+    echo ""
+    echo ""
+    echo "EXAMPLES"
+    echo "  The command:"
+    echo ""
+    echo "         cpt sample-typescript-template ./"
+    echo ""
+    echo "  will deploy all files on sample-typescript-template to ./"
+    echo ""
+
+}
+
+function main() {
+
+if [  $# != 2 ] ; then
+
+   help
+
+else
+
+    SCRIPT_DIRECTORY="$( cd "$( dirname "${BASH_SOURCE[0]}" )/.." && pwd )"
+    pushd $SCRIPT_DIRECTORY > /dev/null
+
+    directoryList=($(ls -d */));
+    isInTemplate=false;
+
+    for directory in ${directoryList[@]}
+    do
+        template=${directory/\//}
+        if [ $1 == $template ] ; then
+            isInTemplate=true;
+        fi
+    done
+
+    if [ $isInTemplate == true ]; then
+
+        cp -r "$1/." $2
+
+        if [ $? == 0 ]; then
+            echo "$1 template copied on $2"
+        else
+            echo "Error: Couldn't copy template properly... please ask enginner how to fix it"
+        fi
+    fi
+
+    popd > /dev/null
+
+fi
+
+
+}
+
+main $1 "$PWD/$2"
