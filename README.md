@@ -29,3 +29,20 @@ $ ls -a
 ..                .idea             node_modules      package.json      tsconfig.json
 
 ```
+
+## How to add your template
+
+Copy template like below
+```angular2
+$ ls
+README.md                  bash_profile               bin                        install                    sample-typescript-template
+$ cp -r your-tepmlate-path ./
+```
+
+Then, you can copy your template by using cdk
+
+```
+$ mkdir sample
+$ cd sample
+$ cdk your-template ./
+```
