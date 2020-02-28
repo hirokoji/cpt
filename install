@@ -5,13 +5,20 @@ ensure_in_bash_profile() {
     FILE=$2
 
     touch "${FILE}"
-    grep -q "${LINE}" "${FILE}" || echo "${LINE}" >> "${FILE}"
+    grep -xq "${LINE}" "${FILE}" || echo "${LINE}" >> "${FILE}"
 }
 
 SETUP_DIRECTORY="$( cd "$( dirname "${BASH_SOURCE[0]}" )" && pwd )"
 
+
+# bash setting
 echo "Linking project bash_profile into ~/.bash_profile."
 ensure_in_bash_profile "source $SETUP_DIRECTORY/bash_profile" ~/.bash_profile
+ensure_in_bash_profile "source $SETUP_DIRECTORY/cpt-completion.bash" ~/.bash_profile
 
+# zsh setting
 echo "Linking project bash_profile into .~/.zshrc."
 ensure_in_bash_profile "source $SETUP_DIRECTORY/bash_profile" ~/.zshrc
+ensure_in_bash_profile "autoload bashcompinit" ~/.zshrc
+ensure_in_bash_profile "bashcompinit" ~/.zshrc
+ensure_in_bash_profile "source $SETUP_DIRECTORY/cpt-completion.bash" ~/.zshrc
