@@ -25,7 +25,7 @@ if [  $# != 2 ] ; then
 else
 
     SCRIPT_DIRECTORY="$( cd "$( dirname "${BASH_SOURCE[0]}" )/.." && pwd )"
-    pushd $SCRIPT_DIRECTORY > /dev/null
+    pushd $SCRIPT_DIRECTORY/templates > /dev/null
 
     directoryList=($(ls -d */));
     isInTemplate=false;
@@ -47,6 +47,8 @@ else
         else
             echo "Error: Couldn't copy template properly... please ask enginner how to fix it"
         fi
+    else
+      echo "$1 not found "
     fi
 
     popd > /dev/null
