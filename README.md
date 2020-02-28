@@ -7,9 +7,7 @@
 
 ## How to use it
 
-Run command like below.
-auto-complete with bash/zsh supported.
-Type tab when you select template-name.
+Run command like below. (auto-complete with bash/zsh supported. Type tab when you select template-name.)
 ```
 $ cpt [template-name] [target directory path]  
 ```
