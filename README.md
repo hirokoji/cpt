@@ -7,7 +7,9 @@
 
 ## How to use it
 
-Run command like below
+Run command like below.
+auto-complete with bash/zsh supported.
+Type tab when you select template-name.
 ```
 $ cpt [template-name] [target directory path]  
 ```
@@ -32,11 +34,9 @@ $ ls -a
 
 ## How to add your template
 
-Copy template like below
+Deploy your templates 
 ```angular2
-$ ls
-README.md                  bash_profile               bin                        install                    sample-typescript-template
-$ cp -r your-tepmlate-path ./
+$ cp -r your-template-dir $CPT_ROOT/templates/
 ```
 
 Then, you can copy your template by using cdk
@@ -44,5 +44,5 @@ Then, you can copy your template by using cdk
 ```
 $ mkdir sample
 $ cd sample
-$ cdk your-template ./
+$ cpt your-template-dir ./
 ```
