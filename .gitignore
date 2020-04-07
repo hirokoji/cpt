@@ -1,2 +1,4 @@
 # my templates list 
-typescript-node-jest-eslint-vscode #https://github.com/komasayuki/typescript-node-jest-eslint-vscode
+templates
+templates/typescript-node-jest-eslint-vscode #https://github.com/komasayuki/typescript-node-jest-eslint-vscode
+.idea

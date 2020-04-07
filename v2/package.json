@@ -1,0 +1,32 @@
+{
+  "name": "cpt",
+  "version": "1.0.0",
+  "description": "copy your template from cli",
+  "main": "index.js",
+  "scripts": {
+    "clean": "rm -rf coverage dist",
+    "test": "jest",
+    "build": "tsc",
+    "start": "ts-node src/index.ts"
+  },
+  "keywords": [
+    "typescript",
+    "jest",
+    "node"
+  ],
+  "dependencies": {},
+  "devDependencies": {
+    "@types/jest": "^25.1.3",
+    "@types/node": "^13.7.6",
+    "jest": "^25.1.0",
+    "ts-jest": "^25.2.1",
+    "ts-node": "^8.6.2",
+    "typescript": "^3.8.2"
+  },
+  "author": "hkojima",
+  "license": "MIT",
+  "repository": {
+    "type": "git",
+    "url": "https://github.com/hk0jima/cpt.git"
+  }
+}
