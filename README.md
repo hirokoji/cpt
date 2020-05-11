@@ -33,7 +33,7 @@ $ ls -a
 ## How to add your template
 
 Deploy your templates 
-```angular2
+```shell script
 $ cp -r your-template-dir $CPT_ROOT/templates/
 ```
 
