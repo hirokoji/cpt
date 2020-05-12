@@ -16,13 +16,7 @@ function help () {
 
 }
 
-function main() {
-
-if [  $# != 2 ] ; then
-
-   help
-
-else
+function cpt() {
 
     SCRIPT_DIRECTORY="$( cd "$( dirname "${BASH_SOURCE[0]}" )/.." && pwd )"
     pushd $SCRIPT_DIRECTORY/templates > /dev/null
@@ -54,9 +48,12 @@ else
 
     popd > /dev/null
 
-fi
 
 
 }
 
-main $1 "$PWD/$2"
+if [  $# == 2 ] ; then
+   cpt $1 "$PWD/$2"
+else
+   help
+fi
