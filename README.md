@@ -44,3 +44,12 @@ $ mkdir sample
 $ cd sample
 $ cpt your-template-dir ./
 ```
+
+## How to exclude directories and files
+Open `template.ignore` file and add directory and files which you exclude  
+As a default, excluded directories and files are below.
+```
+.gitignore
+.vscode
+.idea
+```

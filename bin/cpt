@@ -40,7 +40,8 @@ else
 
     if [ $isInTemplate == true ]; then
 
-        cp -r "$1/." $2
+         echo "Copy files from template exclude these directories and files: $(cat ../template.ignore | tr '\n' ' ')"
+         rsync -av --progress "$1/" $2 --exclude-from=../template.ignore
 
         if [ $? == 0 ]; then
             echo "$1 template copied on $2"
