@@ -1,18 +1,18 @@
 # Copy your own template (CPT)
 
-## How to install
+## Install
 ```
 ./install
 ```
 
-## How to use it
+## Usage
 
 Run command like below. (auto-complete with bash/zsh supported. Type tab when you select template-name.)
 ```
 $ cpt [template-name] [target directory path]  
 ```
 
-####  EXAMPLE
+### Copy files from templates 
 
 If you want to copy template to your-new-project directory,
 please run command as follows
@@ -30,24 +30,29 @@ $ ls -a
 
 ```
 
-## How to add your template
+### Add your template
 
-Deploy your templates 
+Copy your templates 
 ```shell script
 $ cp -r your-template-dir $CPT_ROOT/templates/
+```
+or
+Clone from repository 
+```shell script
+$ 
+$ git clone [repository-url] $CPT_ROOT/templates/
 ```
 
 Then, you can copy your template by using cdk
 
+### Exclude directories and files
+Open `template.ignore` file.   
+,and add directories and files which you wanto exclude  .
+```shell script
+vim $CPT_ROOT/template.ignore
 ```
-$ mkdir sample
-$ cd sample
-$ cpt your-template-dir ./
-```
-
-## How to exclude directories and files
-Open `template.ignore` file and add directory and files which you exclude  
 As a default, excluded directories and files are below.
+
 ```
 .gitignore
 .vscode
