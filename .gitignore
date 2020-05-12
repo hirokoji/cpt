@@ -2,4 +2,5 @@
 typescript-node-jest-eslint-vscode #https://github.com/komasayuki/typescript-node-jest-eslint-vscode
 .idea
 templates/*
-!sample-typescript-template/
+!templates/sample-typescript-template/
+!templates/react-typescript-webpack/
