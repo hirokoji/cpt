@@ -39,7 +39,6 @@ $ cp -r your-template-dir $CPT_ROOT/templates/
 or
 Clone from repository 
 ```shell script
-$ 
 $ git clone [repository-url] $CPT_ROOT/templates/
 ```
 
@@ -54,7 +53,9 @@ vim $CPT_ROOT/template.ignore
 As a default, excluded directories and files are below.
 
 ```
-.gitignore
+.git
 .vscode
 .idea
+node_modules
+dist
 ```
